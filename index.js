@@ -19,7 +19,7 @@ app.use('/cart',crouter);
 app.use('/order',orouter);
 
 mongodb().then(()=>{
-    app.listen(process.env.PORT,()=>{
+    app.listen(process.env.PORT || 5000,()=>{
     console.log("Database connected successfully and server is running on port", process.env.PORT);
     })
 }).catch((err)=>{
